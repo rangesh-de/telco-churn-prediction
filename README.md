@@ -6,10 +6,15 @@ Predicts which telecom customers are about to cancel, and, more importantly, **d
 
 ## Results
 
-> Run `python -m src.train`, then copy the headline numbers from `reports/REPORT.md` here. Example format:
-> - **Logistic regression beat random forest and gradient boosting** (PR-AUC X vs Y): the simplest model won, and it's also the easiest to explain to a business team.
-> - **Targeting customers with a churn score of at least T reaches X% of churners with N offers, for an estimated $Y net**, vs $Z from offering to random customers.
-> - **Month-to-month contracts and the first 6 months are the danger zone**: X% and Y% churn.
+On 7,043 customers (26.5% churned), with a 1,409-customer test set held out until the end:
+
+- **Targeting by the model earns 4x more than targeting at random.** Offering a retention deal to customers scoring 0.46 or higher means 620 offers, reaching 308 of 374 churners (82%), for an estimated **$52,157 net**. The same 620 offers sent to random customers net about $12,289, and offering to everyone nets $27,524.
+- **The simplest model won.** Logistic regression scored PR-AUC 0.663 in cross-validation, ahead of gradient boosting (0.657) and random forest (0.656). On the test set it scored PR-AUC 0.651 and ROC-AUC 0.845, against 0.27 and 0.50 for no skill. It's also the easiest model to explain to a retention team.
+- **Contract type is the biggest churn signal.** 42.7% of month-to-month customers left vs 2.8% on two-year contracts. That makes contract upgrades the obvious offer to test.
+- **The first six months are the danger zone.** 52.9% of customers in their first six months churned, vs 9.5% after four years, so onboarding is where retention effort pays most.
+- **Fiber customers churn at twice the DSL rate** (41.9% vs 19.0%), which points to a price or service-quality issue worth investigating.
+
+_Estimates assume a $50 offer that keeps 30% of would-be churners, valued at 12 months of charges. Change them with `--offer-cost`, `--save-rate`, `--months`._
 
 Full write-up with charts: **[reports/REPORT.md](reports/REPORT.md)**
 

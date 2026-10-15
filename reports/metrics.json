@@ -1,0 +1,78 @@
+{
+  "data": {
+    "blank_total_charges": 11,
+    "blank_total_charges_with_tenure_0": 11,
+    "customers": 7043,
+    "churn_rate": 0.2654
+  },
+  "best_model": "Logistic regression",
+  "assumptions": {
+    "offer_cost": 50.0,
+    "save_rate": 0.3,
+    "months_retained": 12
+  },
+  "chosen_threshold": 0.46,
+  "test": {
+    "default_0.5": {
+      "threshold": 0.5,
+      "recall": 0.802,
+      "precision": 0.505,
+      "f1": 0.62,
+      "customers_targeted": 594,
+      "churners_reached": 300,
+      "churners_total": 374,
+      "value_saved": 81341.64,
+      "campaign_cost": 29700.0,
+      "net_profit": 51641.64
+    },
+    "profit_threshold": {
+      "threshold": 0.46,
+      "recall": 0.824,
+      "precision": 0.497,
+      "f1": 0.62,
+      "customers_targeted": 620,
+      "churners_reached": 308,
+      "churners_total": 374,
+      "value_saved": 83156.76,
+      "campaign_cost": 31000.0,
+      "net_profit": 52156.76
+    },
+    "roc_auc": 0.845,
+    "pr_auc": 0.651,
+    "target_everyone": {
+      "threshold": 0.0,
+      "customers_targeted": 1409,
+      "churners_reached": 374,
+      "churners_total": 374,
+      "value_saved": 97973.64,
+      "campaign_cost": 70450.0,
+      "net_profit": 27523.64
+    },
+    "random_same_size_net_profit": 12289.19
+  },
+  "churn_rate_by_segment": {
+    "Contract": {
+      "Month-to-month": 42.7,
+      "One year": 11.3,
+      "Two year": 2.8
+    },
+    "TenureBand": {
+      "0-6 mo": 52.9,
+      "7-12 mo": 35.9,
+      "13-24 mo": 28.7,
+      "25-48 mo": 20.4,
+      "49+ mo": 9.5
+    },
+    "InternetService": {
+      "Fiber optic": 41.9,
+      "DSL": 19.0,
+      "No": 7.4
+    },
+    "PaymentMethod": {
+      "Electronic check": 45.3,
+      "Mailed check": 19.1,
+      "Bank transfer (automatic)": 16.7,
+      "Credit card (automatic)": 15.2
+    }
+  }
+}

@@ -1,0 +1,5 @@
+model,ROC-AUC,ROC-AUC sd,PR-AUC,PR-AUC sd,Recall,Recall sd,Precision,Precision sd,F1,F1 sd
+Logistic regression,0.848,0.011,0.663,0.014,0.795,0.031,0.521,0.016,0.629,0.019
+Gradient boosting,0.842,0.01,0.657,0.022,0.772,0.022,0.541,0.015,0.636,0.017
+Random forest,0.846,0.01,0.656,0.025,0.768,0.026,0.541,0.014,0.635,0.016
+Baseline (no skill),0.5,0.0,0.265,0.0,0.0,0.0,0.0,0.0,0.0,0.0

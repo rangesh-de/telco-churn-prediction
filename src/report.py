@@ -77,6 +77,8 @@ Logistic regression odds ratios (above 1 raises churn odds, below 1 lowers them;
 
 {_table(odds)}
 
+Read these together, not one at a time. Overlapping features share credit: monthly charges rise with fiber internet and add-on services, so once those are in the model, monthly charges can even show a reversed sign. Permutation importance (chart above) is the better guide to what matters overall.
+
 These are associations, not proof of cause. Month-to-month customers churn more, but that doesn't prove a contract would keep any given customer.
 
 ## Errors at the chosen threshold
